@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Tapronto
+ * @package    Tapronto_Braspag
+ * @author     lsouza
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <Tapronto_Braspag>
+            <version>0.1.0</version>
+        </Tapronto_Braspag>
+    </modules>
+    <frontend>
+        <routers>
+            <braspag>
+                <use>standard</use>
+                <args>
+                    <module>Tapronto_Braspag</module>
+                    <frontName>braspag</frontName>
+                </args>
+            </braspag>
+        </routers>
+        <layout>
+            <updates>
+                <braspag>
+                    <file>braspag.xml</file>
+                </braspag>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<braspag>
+				<use>admin</use>
+				<args>
+					<module>Tapronto_Braspag</module>
+					<frontName>braspag</frontName>
+				</args>
+			</braspag>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<braspag module="braspag">
+				<title>Braspag</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="braspag">
+						<title>Transações</title>
+						<sort_order>0</sort_order>
+						<action>braspag/adminhtml_braspag</action>
+					</items>
+				</children>
+			</braspag>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<Tapronto_Braspag>
+							<title>Braspag Module</title>
+							<sort_order>10</sort_order>
+						</Tapronto_Braspag>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<braspag>
+					<file>braspag.xml</file>
+				</braspag>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <braspag>
+                <class>Tapronto_Braspag_Model</class>
+                <resourceModel>braspag_mysql4</resourceModel>
+            </braspag>
+            <braspag_mysql4>
+                <class>Tapronto_Braspag_Model_Mysql4</class>
+                <entities>
+                    <braspag>
+                        <table>braspag</table>
+                    </braspag>
+                </entities>
+            </braspag_mysql4>
+        </models>
+        <resources>
+            <braspag_setup>
+                <setup>
+                    <module>Tapronto_Braspag</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </braspag_setup>
+            <braspag_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </braspag_write>
+            <braspag_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </braspag_read>
+        </resources>
+        <blocks>
+            <braspag>
+                <class>Tapronto_Braspag_Block</class>
+            </braspag>
+        </blocks>
+        <helpers>
+            <braspag>
+                <class>Tapronto_Braspag_Helper</class>
+            </braspag>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <braspag>
+                <active>1</active>
+                <model>braspag/payment</model>
+                <order_status>processing</order_status>
+                <title>Cartão de crédito</title>
+                <cctypes>AE,VI,MC</cctypes>
+                <payment_action>authorize</payment_action>
+                <allowspecific>0</allowspecific>
+            </braspag>
+        </payment>
+    </default>
+</config>

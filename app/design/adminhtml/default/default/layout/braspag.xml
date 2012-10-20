@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <braspag_adminhtml_braspag_index>
+        <reference name="content">
+            <block type="braspag/adminhtml_braspag" name="braspag" />
+        </reference>
+    </braspag_adminhtml_braspag_index>
+</layout>
