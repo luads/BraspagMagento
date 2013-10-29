@@ -10,7 +10,7 @@
  */
 
 /**
- * @author Luã de Souza <lsouza@tapronto.com.br>
+ * @author Luã de Souza <contato@lsouza.pro.br>
  */
 class Tapronto_Braspag_Model_Payment_Service extends Varien_Object
 {

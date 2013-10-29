@@ -10,7 +10,7 @@
  */
 
 /**
- * @author Luã de Souza <lsouza@tapronto.com.br>
+ * @author Luã de Souza <contato@lsouza.pro.br>
  */
 class Tapronto_Braspag_Model_Mysql4_Braspag_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract
 {

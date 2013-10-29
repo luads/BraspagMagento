@@ -10,7 +10,7 @@
  */
 
 /**
- * @author Luã de Souza <lsouza@tapronto.com.br>
+ * @author Luã de Souza <contato@lsouza.pro.br>
  */
 class Tapronto_Braspag_Block_Payment_Form extends Mage_Payment_Block_Form_Cc
 {

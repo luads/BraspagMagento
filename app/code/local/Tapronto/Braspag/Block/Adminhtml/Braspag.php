@@ -10,7 +10,7 @@
  */
 
 /**
- * @author Luã de Souza <lsouza@tapronto.com.br>
+ * @author Luã de Souza <contato@lsouza.pro.br>
  */
 class Tapronto_Braspag_Block_Adminhtml_Braspag extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
